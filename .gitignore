@@ -1,0 +1,6 @@
+*.sh
+*.txt
+*.swp
+*.html
+html/*.html
+php/server.conf.php
