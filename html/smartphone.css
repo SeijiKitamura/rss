@@ -1,0 +1,225 @@
+/*html5 css リセット*/
+
+/* html5doctor.com Reset Stylesheetv1.6.1Last Updated: 2010-09-17Author: Richard Clark - http://richclarkdesign.com Twitter: @rich_clark*/html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video {    margin:0;    padding:0;    border:0;    outline:0;    font-size:100%;    vertical-align:baseline;    background:transparent;}body {    line-height:1;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {   display:block;}nav ul {    list-style:none;}blockquote, q {    quotes:none;}blockquote:before, blockquote:after,q:before, q:after {    content:'';    content:none;}a {    margin:0;    padding:0;    font-size:100%;    vertical-align:baseline;    background:transparent;}/* change colours to suit your needs */ins {    background-color:#ff9;    color:#000;    text-decoration:none;}/* change colours to suit your needs */mark {    background-color:#ff9;    color:#000;     font-style:italic;    font-weight:bold;}del {    text-decoration: line-through;}abbr[title], dfn[title] {    border-bottom:1px dotted;    cursor:help;}table {    border-collapse:collapse;    border-spacing:0;}/* change border colour to suit your needs */hr {    display:block;    height:1px;    border:0;       border-top:1px solid #cccccc;    margin:1em 0;    padding:0;}input, select {    vertical-align:middle;}
+
+body,ul,h1{
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
+a{
+  text-decoration:none;
+}
+
+div.clr{
+ width  :0;
+ height :0;
+ clear  :both;
+}
+
+
+header {
+  width:320px;
+  background-color:#FFFFFF;
+}
+
+header div.divcorpimg{
+  width:50%;
+}
+
+header div.divcorpimg img{
+  width:100%;
+}
+
+header ul{
+  width:90%;
+  list-style:none;
+}
+
+header ul li{
+  float:left;
+  display:block;
+  width:30%;
+  margin:2%;
+}
+
+header ul li a{
+  display:block;
+  width:100%;
+  height:2.4em;
+  border:1px solid #DCDCDC;
+}
+
+div#wrapper{
+  width:310px;
+  padding:1px;
+}
+
+div#leftmenu{
+  display:none;
+}
+
+div#main_contents{
+  width:100%;
+}
+
+ul#ulitempreview{
+  width:98%;
+  list-style:none;
+}
+
+ul#ulitempreview li{
+  display:block;
+  width:94%;
+  border:1px solid #DCDCDC;
+  margin:2%;
+  padding:2%;
+}
+
+div.itemlist{
+  width:100%;
+  margin-top:2%;
+}
+
+div.imgbox{
+  width:90%;
+  height:10em;
+/*  border:1px solid #DCDCDC;*/
+  overflow:hidden;
+  margin:1%;
+  padding:1%;
+}
+
+div.imgbox img{
+  width:98%;
+}
+
+div.itembox{
+  width:90%;
+/*  border:1px solid #DCDCDC;*/
+  height:10em;
+  margin:1%;
+  padding:1%;
+}
+
+div.itembox h2{
+  font-size:1em;
+  height:2.2em;
+  overflow:hidden;
+  margin-top:5%;
+}
+
+p.itemcomment{
+  font-size:0.8em;
+  margin:5%;
+  width:98%;
+  height:3.1em;
+  overflow:hidden;
+}
+
+p.etcdata{
+  font-size:0.8em;
+  margin:2%;
+  width:98%;
+  height:5.2em;
+  overflow:hidden;
+}
+
+span.spanmaker,
+span.spanlinname{
+  display:block;
+  width:50%;
+  float:left;
+  margin-top:3%;
+}
+
+span.spansaleday,
+span.spanstoresaleday{
+  display:block;
+  width:100%;
+  float:left;
+  margin-top:3%;
+}
+
+div#mainlist{
+  width:90%;
+  margin:2%;
+  padding:2%;
+}
+
+div#mainlist ul{
+  list-style:none;
+}
+
+div#mainlist li{
+}
+
+div#mainlist li a{
+  display:block;
+  width:80%;
+  height:1.2em;
+  margin:2%;
+  padding:1em 2%;
+  border:1px solid #DCDCDC;
+}
+
+div#divtanpin{
+ width:95%;
+ float:left;
+}
+
+div#tanpinimgbox{
+  width:90%;
+  margin:0 2%;
+  overflow:hidden;
+  border:1px solid #DCDCDC;
+}
+
+div#tanpinimgbox img{
+  width:100%;
+}
+
+div#tanpinitembox{
+  width:90%;
+  margin:0 2%;
+  border:1px solid #DCDCDC;
+}
+
+div#tanpinitembox h2{
+  margin:3%;
+}
+
+p.tanpinitemcomment{
+  width:90%;
+  margin:2%;
+  border:1px solid #DCDCDC;
+  padding:2%;
+}
+
+p.tanpinetcdata{
+  width:90%;
+  margin:2%;
+  border:1px solid #DCDCDC;
+  padding:2%;
+  height:5.5em;
+}
+
+p.tanpinetcdata span{
+  display:block;
+  margin:2%;
+}
+
+a.amore{
+  display:block;
+  width:95%;
+  margin:2%;
+  height:2em;
+  background-color:#FF6347;
+  color:white;
+}
+
+div.divcorpimg2{
+  display:none;
+}
+

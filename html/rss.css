@@ -1,0 +1,459 @@
+/*html5 css リセット*/
+
+/* html5doctor.com Reset Stylesheetv1.6.1Last Updated: 2010-09-17Author: Richard Clark - http://richclarkdesign.com Twitter: @rich_clark*/html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video {    margin:0;    padding:0;    border:0;    outline:0;    font-size:100%;    vertical-align:baseline;    background:transparent;}body {    line-height:1;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {   display:block;}nav ul {    list-style:none;}blockquote, q {    quotes:none;}blockquote:before, blockquote:after,q:before, q:after {    content:'';    content:none;}a {    margin:0;    padding:0;    font-size:100%;    vertical-align:baseline;    background:transparent;}/* change colours to suit your needs */ins {    background-color:#ff9;    color:#000;    text-decoration:none;}/* change colours to suit your needs */mark {    background-color:#ff9;    color:#000;     font-style:italic;    font-weight:bold;}del {    text-decoration: line-through;}abbr[title], dfn[title] {    border-bottom:1px dotted;    cursor:help;}table {    border-collapse:collapse;    border-spacing:0;}/* change border colour to suit your needs */hr {    display:block;    height:1px;    border:0;       border-top:1px solid #cccccc;    margin:1em 0;    padding:0;}input, select {    vertical-align:middle;}
+
+body,ul,h1{
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
+a{
+  text-decoration:none;
+}
+
+div.clr{
+ width  :0;
+ height :0;
+ clear  :both;
+}
+
+div#wrapper{
+  width:100%;
+  padding:2%;
+}
+
+header {
+  width:100%;
+  background-color:#FFFFFF;
+}
+
+header div.divcorpimg{
+  width:20%;
+  float:left;
+}
+
+header div.divcorpimg img{
+  width:100%;
+}
+
+header ul{
+  list-style:none;
+}
+
+header ul li{
+  float:left;
+  width:20%;
+  margin-top:3%;
+}
+
+
+header ul li a{
+  display:block;
+  border : 1px solid #D3D3D3;
+  width  :100%;
+  margin :0px 5px;
+  padding:20px 0;
+  text-align :center;
+}
+
+div#corpbox{
+  width:20%;
+  height:400px;
+  overflow:hidden;
+  border:1px solid #DCDCDC;
+  float:left;
+}
+
+div#previewbox{
+  width:70%;
+  height:400px;
+  overflow:hidden;
+  border:1px solid #DCDCDC;
+  float:left;
+  margin-left:3%;
+}
+
+div#entrybox{
+  clear:both;
+  width:90%;
+  height:300px;
+  border:1px solid #DCDCDC;
+  margin-top:3%;
+}
+
+div#corplist{
+  width:90%;
+  height:90%;
+  margin:5%;
+  border:1px solid #DCDCDC;
+  overflow:auto;
+}
+
+div#preview{
+  width:95%;
+  height:90%;
+  margin:1%;
+  border:1px solid #DCDCDC;
+  overflow:auto;
+}
+
+div#entry{
+  width:95%;
+  height:90%;
+  margin:1%;
+  border:1px solid #DCDCDC;
+}
+
+div#entry dl dt{
+  float:left;
+  clear:both;
+  margin-top:1%;
+  width:10%;
+  text-align:right;
+}
+
+div#entry dl dd{
+  float:left;
+  margin-top:1%;
+  width:90%;
+}
+
+div#entry dl dd input[type=text]{
+  width:90%;
+  border:1px solid #DCDCDC;
+}
+div#entry dl dd input[type=button]{
+  float:left;
+  width:10%;
+  margin:2%;
+}
+
+div#corplist ul{
+  list-style:none;
+  width:90%;
+}
+
+div#corplist ul li{
+ height:1.5em;
+ padding:3%;
+}
+
+div#leftmenu{
+  width:18%;
+  float:left;
+}
+
+div#leftmenu ul {
+  width:100%;
+  list-style:none;
+}
+
+div#leftmenu ul li{
+  display:block;
+  height:1.5em;
+  border-bottom:1px solid #DCDCDC;
+  margin-top:3%;
+  padding:3%;
+}
+
+div#leftmenu ul li a{
+  display:block;
+}
+
+div#main_contents{
+  float:left;
+  width:64%;
+}
+
+ul#ulitempreview{
+  width:90%;
+  list-style:none;
+}
+
+ul#ulitempreview li{
+  display:block;
+  width:100%;
+  border:1px solid #DCDCDC;
+  margin:1%;
+  padding:1%;
+}
+
+div.itemlist{
+}
+
+div.imgbox{
+  width:30%;
+  height:200px;
+  float:left;
+  overflow:hidden;
+  border:1px solid #DCDCDC;
+  margin:1%;
+}
+
+div.imgbox img{
+  height:100%;
+}
+
+div.itembox{
+  width:60%;
+  height:200px;
+  float:left;
+  margin-left:3%;
+/*border:1px solid #DCDCDC;*/
+  padding:1%;
+  overflow:hidden;
+}
+
+div.itembox h2{
+  font-size:1.3em;
+  margin:0 0 3% 0;
+  height:2em;
+  overflow:hidden;
+}
+
+p.itemcomment{
+  width:90%;
+  padding:2%;
+  height:5em;
+  overflow:hidden;
+  margin:2% 0;
+  border:1px solid #DCDCDC;
+}
+
+p.etcdata{
+  width:90%;
+  height:2.3em;
+  border:1px solid #DCDCDC;
+}
+
+p.etcdata span{
+  display:block;
+  width:50%;
+  float:left;
+}
+/*
+div.itembox dl dt,
+div.itembox dl dd{
+  padding-top:2%;
+}
+*/
+
+
+div.divimg{
+  width:80%;
+  overflow:hidden;
+}
+
+div.divimg img{
+  height:100%;
+}
+section ul{
+  list-style:none;
+}
+section ul li{
+}
+
+div.divmakerlist{
+  width:100%;
+  border-top:1px solid #DCDCDC;
+  padding:10px;
+}
+
+div.divcorp{
+  width :100%;
+}
+
+div.divcorp h1{
+  padding:5px;
+}
+
+
+div.divitemimg{
+  width :50%;
+  height:80%;
+  overflow:hidden;
+  float:left;
+}
+div.divitemimg img{
+  width :90%;
+}
+
+div.topitem{
+  width:45%;
+  float:left;
+}
+
+div.divitemlist{
+  float:left;
+  width:100%;
+}
+
+div.divitemlist dl dt{
+  width:25%;
+  margin-top:30px;
+  float:left;
+  clear:both;
+  border-top : 1px solid #D3D3D3;
+}
+
+div.itemlistimg{
+  width:90%;
+  height:80%;
+  overflow:hidden;
+}
+
+div.itemlistimg img{
+  width:90%;
+}
+div.divitemlist dl dd{
+  width:70%;
+  float:left;
+  margin-top:30px;
+  border-top : 1px solid #D3D3D3;
+}
+
+div#corpbox_long{
+  width:20%;
+  height:600px;
+  overflow:hidden;
+  border:1px solid #DCDCDC;
+  float:left;
+}
+
+div#previewbox_long{
+  width:70%;
+  height:600px;
+  overflow:hidden;
+  border:1px solid #DCDCDC;
+  float:left;
+  margin-left:3%;
+}
+
+ul#ulitemlist{
+  width:90%;
+  list-style:none;
+}
+
+
+ul#ulitemlist li {
+  border-bottom:3px solid #DCDCDC;
+  margin-bottom:3%;
+  padding-top:3%;
+}
+
+ul#ulitemlist li dl dt{
+  clear:both;
+  float:left;
+  width:15%;
+}
+
+ul#ulitemlist li dl dd {
+  float:left;
+  width:80%;
+}
+
+ul#ulitemlist li dl dd textarea,
+ul#ulitemlist li dl dd input[type=text]{
+  border:1px solid #DCDCDC;
+}
+
+ul#ulitemlist li dl dd input[name^=originalitemurl],
+ul#ulitemlist li dl dd input[name^=impurl]{
+  width:75%;
+}
+
+ul#ulitemlist li dl dd input[name^=imgurl]{
+  width:100%;
+}
+
+div.imgdiv{
+  width:100%;
+}
+
+div.imgdiv img{
+  width:30%;
+  border:1px solid #DCDCDC;
+  margin:1%;
+}
+
+/*
+@media print{
+  body{
+    width:800px;
+  }
+  #wrapper{
+    width:70%;
+  }
+
+  #leftmenu{
+    display:none;
+  }
+
+  div#main_contents{
+    width:90%;
+  }
+
+  ul#ulitempreview{
+    width:90%;
+  }
+
+  ul#ulitempreview li{
+    width:95%;
+    display:block;
+    border:1px solid #000000;
+  }
+}
+*/
+div.divcorpimg2{
+  display:none;
+}
+
+div#divtanpin{
+ width:64%;
+ float:left;
+}
+
+div#tanpinimgbox{
+  width:30%;
+  margin:0 3%;
+  overflow:hidden;
+  border:1px solid #DCDCDC;
+  float:left;
+}
+
+div#tanpinimgbox img{
+  width:100%;
+}
+
+div#tanpinitembox{
+  width:50%;
+  float:left;
+  margin:0 3%;
+  border:1px solid #DCDCDC;
+}
+
+div#tanpinitembox h2{
+  margin:3%;
+}
+
+p.tanpinitemcomment{
+  width:90%;
+  margin:3%;
+  border:1px solid #DCDCDC;
+  padding:2%;
+}
+
+p.tanpinetcdata{
+  width:90%;
+  margin:3%;
+  border:1px solid #DCDCDC;
+  padding:2%;
+  height:5.5em;
+}
+
+p.tanpinetcdata span{
+  display:block;
+  margin:2%;
+}
+

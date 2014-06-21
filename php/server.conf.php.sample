@@ -1,0 +1,16 @@
+<?php
+require_once("function.php");
+
+define("HOME","/hp2");         //ルートディレクトリ
+
+define("SITEDIR" ,dirname($_SERVER["PHP_SELF"]));     //保存場所(cron用)
+define("DOCDIR"  ,$_SERVER["DOCUMENT_ROOT"]);  //保存場所(cron用)
+define("DBHOST"  ,"localhost");                //サーバー名
+define("DBNAME"  ,"rss");                      //データベース名
+define("DBUSER"  ,"");                         //DBユーザー名
+define("DBPASS"  ,"");                         //DBパスワード
+
+define("USERID"  ,"");                         //管理画面ログインユーザー名
+define("PASS"    ,"");                         //管理画面ログインパスワード
+define("TABLE_PREFIX"   ,"rss_");              //テーブルプレフィックス
+?>

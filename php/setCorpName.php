@@ -1,0 +1,10 @@
+<?php
+require_once("rssfunction.php");
+$corpid=$_GET["requestcorpid"];
+$url=$_GET["requesturl"];
+$part=$_GET["requestpart"];
+$corpname=$_GET["requestcorpname"];
+$fcorpname=$_GET["requestfcorpname"];
+$corpmas=setCorpName($corpid,$url,$part,$corpname,$fcorpname);
+setRSS($corpmas["corpid"]);
+?>
