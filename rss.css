@@ -515,3 +515,80 @@ ul#ulentry li span input{
 textarea.entryitemcomment{
   border:1px solid #DCDCDC;
 }
+
+div#entrydiv{
+  width:100%;
+}
+
+div#entrycorplist{
+  width:20%;
+  float:left;
+}
+
+div#entrycorplist ul{
+  list-style:none;
+}
+
+div#entryitemlist{
+  width:75%;
+  float:left;
+}
+
+div#entryitemlist ul{
+  list-style:none;
+}
+
+div#entryitemlist ul li{
+  margin:5% 0;
+}
+
+div.imgdiv{
+  width:20%;
+  height:200px;
+  border:1px solid #DCDCDC;
+  float:left;
+  overflow:hidden;
+}
+
+div.imgpick{
+  width:90%;
+  height:85%;
+  overflow:hidden;
+}
+
+div.imgpick img{
+  width:100%;
+}
+
+div.itemdiv{
+  width:75%;
+  float:left;
+}
+
+div.itemdiv dl dt{
+  clear:both;
+  float:left;
+  width:15%;
+  text-align:right;
+}
+
+div.itemdiv dl dd{
+  float:left;
+  width:80%;
+}
+
+div.itemdiv dl dd input[type='text']{
+  width:90%;
+  border:1px solid #DCDCDC;
+}
+
+div.imglist{
+  display:none;
+}
+
+div.imglist img{
+  float:left;
+  width:100px;
+  border:1px solid #DCDCDC;
+  margin:3px;
+}

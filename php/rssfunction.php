@@ -595,6 +595,62 @@ function getDBItemList($corpid){
   return $itemarray;
 }
 
+//---------------------------------------------------//
+// DBに登録されているアイテム一覧を返す
+//---------//
+//引数・変数
+//$lincode=>部門番号(空欄で全会社)
+//---------//
+//返り値
+//配列
+//---------------------------------------------------//
+function getDBItemList2($lincode){
+	global $LINMAS;
+
+//corpidチェック
+  if(! preg_match("/^[0-9]+$/",$lincode)){
+    echo "err(エラー):bumon番号不正";
+    return false;
+  }
+  $db=new DB();
+
+  //アイテムリスト
+  $db->select="itemid,corpid,itemurl,originalitemurl,pagetitle,originaltitle,itemcomment,lincode,saleday,storesaleday,status,idate,cdate";
+  $db->from=TB_RSSITEM;
+  $db->where =" lincode=".$lincode;
+  $db->order =" idate desc";
+  $itemarray=$db->getArray();
+  if(isset($itemarray)){
+    foreach($itemarray as $key=>$val){
+      //部門名をセット
+      $itemarray[$key]["linname"]=$LINMAS[$val["lincode"]];
+
+      //itemurlをデコード
+      $itemarray[$key]["itemurl"]=decodeurl($val["itemurl"]);
+
+      //originalitemurlをデコード
+      $itemarray[$key]["originalitemurl"]=decodeurl($val["originalitemurl"]);
+
+      //画像URLを配列へセット
+      $db->select="imgid,itemid,imgurl,status";
+      $db->from=TB_RSSIMG;
+      $db->where ="itemid=".$val["itemid"];
+      $db->order ="imgid";
+      $imgarray=$db->getArray();
+      if(isset($imgarray)){
+        foreach($imgarray as $key1=>$val1){
+          $itemarray[$key]["img"][]=array( "imgid"=>$val1["imgid"]
+                                          ,"imgurl"=>decodeurl($val1["imgurl"])
+                                          ,"status"=>$val1["status"]
+                                         );
+        }
+      }
+    }
+  }
+
+  return $itemarray;
+}
+
 function setItem($itemid,$corpid,$itemurl,$pagetitle=null,$saleday=null,$storesaleday=null,$itemcomment=null,$lincode=null,$itemstatus=null,$imgurl=null){
 
   try{
@@ -723,6 +779,51 @@ function getItemURL($itemid){
   $db->select.=",t.saleday,t.storesaleday,t.status,t.corpid";
   $db->from =TB_RSSITEM." as t";
   $db->where ="t.itemid=".$itemid;
+  $itemarray=$db->getArray();
+  if(! isset($itemarray)){
+    echo "err:データなし";
+    return false;
+  }
+
+  foreach($itemarray as $key=>$val){
+    if(isset($val["originalitemurl"])){
+      $itemarray[$key]["originalitemurl"]=decodeurl($val["originalitemurl"]);
+    }
+
+    if(isset($val["itemurl"])){
+      $itemarray[$key]["itemurl"]=decodeurl($val["itemurl"]);
+    }
+
+    $db->select="imgurl,status";
+    $db->from =TB_RSSIMG;
+    $db->where="itemid=".$val["itemid"];
+    $imgarray=$db->getArray();
+    if(isset($imgarray)){
+      foreach($imgarray as $key1=>$val1){
+        $imgarray[$key1]["imgurl"]=decodeurl($val1["imgurl"]);
+      }
+      if(isset($imgarray)){
+        $itemarray[$key]["img"]=$imgarray;
+      }
+    }
+  }
+
+  return $itemarray;
+}
+
+function getItemListURL($lincode){
+  if(! preg_match("/^[0-9]+$/",$lincode)){
+    echo "err(エラー):部門番号(".$lincode.")が不正です。";
+    return false;
+  }
+
+  $db=new DB();
+  $db->select =" t.itemid,t.itemurl,t.originalitemurl,t.lincode";
+  $db->select.=",t.pagetitle,t.originaltitle,t.itemcomment";
+  $db->select.=",t.saleday,t.storesaleday,t.status,t.corpid";
+  $db->from =TB_RSSITEM." as t";
+  $db->where ="t.linocde=".$lincode;
+  $db->order=" t.saleday desc";
   $itemarray=$db->getArray();
   if(! isset($itemarray)){
     echo "err:データなし";
@@ -1127,7 +1228,6 @@ function getItemHtml($itemarray){
   return $html;
 }
 
-
 function escapeurl($url){
     $url=rawurldecode($url);
     return urlencode($url);
@@ -1340,6 +1440,13 @@ function getCorpMenuPage($corpid=null){
   return $html;
 }
 
+
+function getLeftMenuLin($lincode=null){
+  $html="<div id='leftmenu'>";
+  $html.=getLinMenu($lincode);
+  $html.="</div>";
+  return $html;
+}
 
 function getLeftMenu($lincode=null,$corpid=null){
   $html="<div id='leftmenu'>";

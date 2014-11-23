@@ -5,43 +5,60 @@ $pagearray=$PAGE[$pagename];
 
 echo getHead($pagearray);
 echo getHeader($pagearray);
-echo getEntryLeftMenu();
+//echo getEntryLeftMenu();
 ?>
-<div id="entrypreview">
+<div id="entrydiv">
+ <div id="entrycorplist">
+ </div>
+ <div id="entryitemlist">
+ </div>
 </div>
 <script>
 
 $(function(){
-  getItemList($("select#corpselect").val());
-  $("select#corpselect").change(function(){
-    getItemList($(this).val());
+  $("ul#mainlist li a").click(function(){
+    console.log($(this).attr("href"));
   });
+
+  getCorpList();
 });
 
-//アイテムリスト表示
-function getItemList(corpid){
-  var phpfile="php/getItemList2.php";
-  var para={"requestcorpid":corpid};
-  $.get(phpfile,para,function(html){
-    console.log("getItemList取得");
-    console.log(html);
-    $("div#divitemlist").empty()
+//会社一覧表示
+function getCorpList(){
+  var phpfile="php/getCorpList.php";
+  $.get(phpfile,function(html){
+    $("div#entrycorplist").empty()
                      .append(html);
 
-    $("#entryitemlist li").click(function(){
-      var itemid=$(this).attr("id").split("_")[1];
-      getHtml(itemid);
+    $("div#entrycorplist ul li").click(function(){
+       var corpid=$(this).attr("id").split("_")[1];
+       getItemList(corpid);
     });
-
-    //新規
-    $("input[name^=btnnew]").click(function(){
-      getHtml(null,1);
-    });
-
-
   });
 }
+//アイテムリスト表示
+function getItemList(corpid){
+  var phpfile="php/getItemListCorp.php";
+  var para={"requestcorpid":corpid};
+  $.get(phpfile,para,function(html){
+    $("div#entryitemlist").empty()
+                          .append(html);
+//「他の画像」イベント追加
+    $("input[value='他の画像']").click(function(){
+      var imglist=$(this).parent().parent().find("div.imglist");
+      imglist.toggle();
+    });
 
+//画像クリックイベント
+   $("div.imglist img").click(function(){
+     var imgurl=$(this).attr("src");
+     //ここから
+   });
+
+});
+}
+
+/*
 //商品登録画面表示
 function getHtml(itemid,newitem){
   var phpfile="php/getHtml.php";
@@ -210,5 +227,6 @@ function delItem(){
     alert("削除しました");
   });
 }
+*/
 </script>
 
